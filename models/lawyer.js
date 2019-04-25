@@ -46,6 +46,9 @@ var lawyerSchema = new Schema({
   },
   price: {
     type: Number
+  },
+  available: {
+    type: Boolean
   }
 });
 

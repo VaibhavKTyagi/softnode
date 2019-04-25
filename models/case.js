@@ -21,7 +21,7 @@ var caseSchema = new Schema({
     required: true
   },
   convo: {
-    type: [String],
+    type: [Object],
     required: false
   }
 });

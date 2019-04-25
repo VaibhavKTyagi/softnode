@@ -16,7 +16,8 @@ router.post("/", function(req, res, next) {
       aadharNumber: req.body.aadharNumber,
       barID: req.body.barID,
       price: req.body.price,
-      speciality: req.body.speciality
+      speciality: req.body.speciality,
+      available: true
     },
     function(err) {
       if (err) {

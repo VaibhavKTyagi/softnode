@@ -43,5 +43,22 @@ router.post("/addCase", function(req, res, next) {
     }
   );
 });
+router.post("/addmsg/", function(req, res, next) {
+  console.log("dd", req);
 
+  caselist.update(
+    {
+      $or: [{ userID: req.user.email }, { lawyerID: req.user.email }],
+      caseName: req.body.caseName
+    },
+    { $set: { convo: req.body.convo } },
+    function(err) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ msg: "Could not create user" });
+      }
+      res.json({ msg: "Case Filed" });
+    }
+  );
+});
 module.exports = router;

@@ -11,7 +11,8 @@ router.post("/getlist", function(req, res, next) {
     {
       $and: [
         { price: { $gte: req.body.lowerlimit } },
-        { price: { $lte: req.body.upperlimit } }
+        { price: { $lte: req.body.upperlimit } },
+        { available: true }
       ],
       speciality: { $eq: req.body.speciality }
     },

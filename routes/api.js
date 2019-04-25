@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 var userRoute = require("./user");
 var lawyerRoute = require("./lawyer");
 var caseRoute = require("./caselist");
+var accountSettingsRoute = require("./accountSettings");
 
 var sign_in = function(req, res) {
   User.findOne(
@@ -68,5 +69,6 @@ router.use(checkAdminToken);
 router.use("/user", userRoute);
 router.use("/lawyer", lawyerRoute);
 router.use("/caselist", caseRoute);
+router.use("/accountSettings", accountSettingsRoute);
 
 module.exports = router;
